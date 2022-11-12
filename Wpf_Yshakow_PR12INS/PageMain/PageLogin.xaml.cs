@@ -13,7 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Wpf_Yshakow_PR12INS.ApplicationData;
-
+using Wpf_Yshakow_PR12INS.PageAdmin;
+using Wpf_Yshakow_PR12INS.PageStudent;
 
 namespace Wpf_Yshakow_PR12INS.PageMain
 {
@@ -29,7 +30,7 @@ namespace Wpf_Yshakow_PR12INS.PageMain
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            AppFrame.frameMain.Navigate(new PageCreateAcc());
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -49,10 +50,12 @@ namespace Wpf_Yshakow_PR12INS.PageMain
                         case 1:
                             MessageBox.Show("Здравствуйте, Администратор " + userObj.name + "!", 
                                 "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                            NavigationService.Navigate(new PageMenuAdmin());
                             break;
                         case 2:
                             MessageBox.Show("Здравствуйте, Ученик " + userObj.name + "!", 
                                 "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                            NavigationService.Navigate(new PageAccountStudent());
                             break;
                     }
                 }
