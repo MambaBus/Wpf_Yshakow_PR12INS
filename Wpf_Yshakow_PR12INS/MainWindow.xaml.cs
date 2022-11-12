@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Wpf_Yshakow_PR12INS.ApplicationData;
-
+using Wpf_Yshakow_PR12INS.PageMain;
 namespace Wpf_Yshakow_PR12INS
 {
     /// <summary>
@@ -24,7 +24,10 @@ namespace Wpf_Yshakow_PR12INS
         public MainWindow()
         {
             InitializeComponent();
-            AppConnect.modelOdb = new firstEntities();//подключение к БД
+            AppConnect.modelOdb = new firstEntities();
+            AppFrame.frameMain = FrmMain; //загрузка фрейма с началом работы программы
+
+            FrmMain.Navigate(new PageLogin()); //подключение во фрейм стартовой страницы авторизации
         }
     }
 }

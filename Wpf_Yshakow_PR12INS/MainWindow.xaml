@@ -6,7 +6,18 @@
         xmlns:local="clr-namespace:Wpf_Yshakow_PR12INS"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="350*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <Image Source="Resources/i.png" Width="50"/>
+            <TextBlock Text="Канцелярские товары" Style="{StaticResource Title}"/>
+        </StackPanel>
+        <Frame x:Name="FrmMain" NavigationUIVisibility="Hidden" Grid.Row="1"/>
+
     </Grid>
 </Window>
